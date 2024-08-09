@@ -4,3 +4,6 @@
 [submodule "isaac_ros_jetson"]
 	path = isaac_ros_jetson
 	url = https://github.com/NamTruongTran/isaac_ros_jetson.git
+[submodule "isaac_ros_nitros"]
+	path = isaac_ros_nitros
+	url = https://github.com/NamTruongTran/isaac_ros_nitros.git
