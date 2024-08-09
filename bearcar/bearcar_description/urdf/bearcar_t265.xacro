@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <joint name="base_of_T265" type="fixed">
+    <parent link="base_link"/>
+    <child link="T265_pose_frame"/>
+    <origin xyz="0.29 0 0.155"/>
+  </joint>
+
+  <link name="T265_pose_frame">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.08 0.02"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0027 0 0"/>
+      <geometry>
+        <box size="0.026 0.124 0.029"/>
+      </geometry>
+    </collision>
+    <xacro:inertial_box mass="0.068024" x="0.01" y="0.08" z="0.02">    <!-- Mass T265 from: https://github.com/m-tartari/realsense_gazebo_description/blob/master/urdf/_t265.urdf.xacro                                                               -->
+      <origin xyz="0 0 0" rpy="0 0 0"/>                            
+    </xacro:inertial_box>
+  </link>
+
+</robot>

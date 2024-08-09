@@ -1,0 +1,155 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="D455_base_frame">
+    <visual>
+      <geometry>
+        <box size="0.01 0.08 0.02"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="base_of_D455" type="fixed">
+    <parent link="base_link"/>
+    <child link="D455_base_frame"/>
+    <origin xyz="-0.29 0 0.119"/>
+  </joint>
+  
+  <!-- camera body, with origin at bottom screw mount -->
+  <joint name="D455_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="D455_base_frame"/>
+    <child link="D455_bottom_screw_frame"/>
+  </joint>
+  
+  <link name="D455_bottom_screw_frame"/>
+  
+  <joint name="D455_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.011150000000000002 0.0475 0.0145"/>
+    <parent link="D455_bottom_screw_frame"/>
+    <child link="D455_link"/>
+  </joint>
+
+  <link name="D455_link">
+    <visual>
+      <!-- the mesh origin is at front plate in between the two infrared camera axes -->
+      <!-- <origin xyz="${d455_zero_depth_to_glass-d455_cam_depth/2} ${-d455_cam_depth_py} 0" rpy="0 0 0"/> -->
+      <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="0.0046500000000000005 -0.0475 0"/>
+      <geometry>
+        <!-- <box size="${d455_cam_depth} ${d455_cam_width} ${d455_cam_height}"/> -->
+        <mesh filename="package://bearcar_description/meshes/d455.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="aluminum"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.00845 -0.0475 0"/>
+      <geometry>
+        <box size="0.026 0.124 0.029"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <!-- The following are not reliable values, and should not be used for modeling -->
+      <mass value="0.072"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.000498940" iyz="0.0" izz="0.003879257"/>
+    </inertial>
+  </link>
+  
+  <!-- camera depth joints and links -->
+  <joint name="D455_depth_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="D455_link"/>
+    <child link="D455_depth_frame"/>
+  </joint>
+  
+  <link name="D455_depth_frame"/>
+  
+  <joint name="D455_depth_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
+    <parent link="D455_depth_frame"/>
+    <child link="D455_depth_optical_frame"/>
+  </joint>
+  
+  <link name="D455_depth_optical_frame"/>
+  <!-- camera left IR joints and links -->
+  <joint name="D455_infra1_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.0 0"/>
+    <parent link="D455_link"/>
+    <child link="D455_infra1_frame"/>
+  </joint>
+  
+  <link name="D455_infra1_frame"/>
+  <joint name="D455_infra1_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
+    <parent link="D455_infra1_frame"/>
+    <child link="D455_infra1_optical_frame"/>
+  </joint>
+  
+  <link name="D455_infra1_optical_frame"/>
+  <!-- camera right IR joints and links -->
+  <joint name="D455_infra2_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.095 0"/>
+    <parent link="D455_link"/>
+    <child link="D455_infra2_frame"/>
+  </joint>
+  
+  <link name="D455_infra2_frame"/>
+  <joint name="D455_infra2_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
+    <parent link="D455_infra2_frame"/>
+    <child link="D455_infra2_optical_frame"/>
+  </joint>
+  
+  <link name="D455_infra2_optical_frame"/>
+  <!-- camera color joints and links -->
+  <joint name="D455_color_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.059 0"/>
+    <parent link="D455_link"/>
+    <child link="D455_color_frame"/>
+  </joint>
+  
+  <link name="D455_color_frame"/>
+  <joint name="D455_color_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
+    <parent link="D455_color_frame"/>
+    <child link="D455_color_optical_frame"/>
+  </joint>
+  
+  <link name="D455_color_optical_frame"/>
+  <link name="D455_accel_frame"/>
+  <link name="D455_accel_optical_frame"/>
+  <link name="D455_gyro_frame"/>
+  <link name="D455_gyro_optical_frame"/>
+  <link name="D455_imu_optical_frame"/>
+  <joint name="D455_accel_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.01602 -0.03022 0.0074"/>
+    <parent link="D455_link"/>
+    <child link="D455_accel_frame"/>
+  </joint>
+  
+  <joint name="D455_accel_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
+    <parent link="D455_accel_frame"/>
+    <child link="D455_accel_optical_frame"/>
+  </joint>
+  
+  <joint name="D455_gyro_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.01602 -0.03022 0.0074"/>
+    <parent link="D455_link"/>
+    <child link="D455_gyro_frame"/>
+  </joint>
+  
+  <joint name="D455_gyro_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
+    <parent link="D455_gyro_frame"/>
+    <child link="D455_gyro_optical_frame"/>
+  </joint>
+  
+  <joint name="D455_imu_optical_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="D455_gyro_optical_frame"/>
+    <child link="D455_imu_optical_frame"/>
+  </joint>
+
+</robot>

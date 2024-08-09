@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="bearcar" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+
+      <!-- <xacro:arg name="use_ros2_control" default="true"/>
+      <xacro:arg name="simulation" default="true"/> -->
+      
+      <xacro:include filename="bearcar_properties.xacro"/>
+      <xacro:include filename="bearcar_core.xacro"/>
+      <xacro:include filename="bearcar_lidar.xacro"/> 
+      <xacro:include filename="bearcar_d455.xacro"/>
+      <xacro:include filename="bearcar_t265.xacro"/> 
+
+
+
+      <!-- <xacro:if value="$(arg use_ros2_control)">
+       <xacro:include filename="ros2_control.xacro"/>  
+      </xacro:if>
+
+      <xacro:unless value="$(arg use_ros2_control)">             Don't publish joint states instead it will publish left/right wheel transforms directly
+       <xacro:include filename="gazebo_control.xacro"/>  
+      </xacro:unless> -->
+
+ 
+
+</robot>

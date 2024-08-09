@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="bearcar" xmlns:xacro="http://ros.org/wiki/xacro">
+
+      <xacro:include filename="bearcar_core_max.xacro"/>
+      <xacro:include filename="bearcar_d455.xacro"/>
+      <xacro:include filename="bearcar_t265.xacro"/>
+      <xacro:include filename="bearcar_lidar_max.xacro"/>
+      
+</robot>

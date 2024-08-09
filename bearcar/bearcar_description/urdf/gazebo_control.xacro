@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="bearcar" xmlns:xacro="http://ros.org/wiki/xacro">
+
+     
+      <gazebo>
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+                    
+            <!-- wheel informations -->
+            <left_joint>wheel_left_back_joint</left_joint>
+            <right_joint>wheel_right_back_joint</right_joint>
+            <wheel_separation>0.228</wheel_separation>
+            <wheel_diameter>0.122</wheel_diameter>
+
+            <!-- Limits  -->
+            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+            <!-- Output -->
+            <odometry_frame>odom</odometry_frame>
+            <odometry_frame>base_link</odometry_frame>
+
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+           
+
+        </plugin>
+      </gazebo>
+      
+</robot>

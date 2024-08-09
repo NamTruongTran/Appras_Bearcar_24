@@ -1,0 +1,164 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- BASE_FOOTPRINT LINK -->
+  <link name="base_footprint"/>
+
+  <!-- BASE LINK -->
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+    <origin xyz="0 0 0.050" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_link">                                                           <!--Base Frame in 0 0 0-->
+    <visual>
+      <origin xyz="0.15 0 0.0895" rpy="0 0 0"/>                                     <!-- Change the Position of the Box relative to the base_link -->
+      <geometry>
+        <box size="0.44 0.202 0.179"/>                                              <!-- Box Size -->
+      </geometry>
+      <material name="light_black"/>
+    </visual>
+    <collision>                                                                     <!-- The <collision> tag is primarily used for simulation purposes --> 
+      <origin xyz="0.15 0 0.0895" rpy="0 0 0"/>     
+      <geometry>
+        <box size="0.44 0.202 0.179"/>                  
+      </geometry>
+    </collision>
+    <xacro:inertial_box mass="1.3729096e+00" x="0.44" y="0.202" z="0.179">          <!-- XYZ Box Size & Mass of Turtlebot3 chassis (https://github.com/ROBOTIS-GIT/turtlebot3/blob/master/turtlebot3_description/urdf/turtlebot3_waffle.urdf.xacro) -->                                                                             
+      <origin xyz="0.15 0 0.0895" rpy="0 0 0"/>                                     <!-- Origin Shifted Box Size -->
+    </xacro:inertial_box>
+  </link>
+
+  <!-- WHEEL LEFT BACK LINK -->
+  <joint name="wheel_left_back_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_left_back_link"/>
+    <origin xyz="0 0.114 0" rpy="-${pi/2} 0 0"/>                                    <!-- Shift Wheel Frame/Link -->
+    <axis xyz ="0 0 1"/> 
+  </joint>
+  
+  <link name="wheel_left_back_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.061" length="0.062"/>                                   <!-- Wheel Size -->
+      </geometry>
+      <material name="light_black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.061" length="0.062"/> 
+        <!-- <sphere radius="0.061"/> -->
+      </geometry>
+    </collision>
+    <xacro:inertial_cylinder mass="0.477" length="0.062" radius="0.061">            <!-- Mass of Jackal wheels: https://github.com/jackal/jackal/blob/noetic-devel/jackal_description/urdf/jackal.urdf.xacro --> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:inertial_cylinder>
+  </link>
+
+  <!-- WHEEL RIGHT BACK LINK -->
+  <joint name="wheel_right_back_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_right_back_link"/>
+    <origin xyz="0 -0.114 0" rpy="-${pi/2} 0 0"/>                                   <!-- Shift Wheel Frame/Link -->
+    <axis xyz ="0 0 1"/> 
+  </joint>
+  
+  <link name="wheel_right_back_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.061" length="0.062"/>                                   <!-- Wheel Size -->
+      </geometry>
+      <material name="light_black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.061" length="0.062"/> 
+        <!-- <sphere radius="0.061"/>  -->
+      </geometry>
+    </collision>
+    <xacro:inertial_cylinder mass="0.477" length="0.062" radius="0.061">            <!-- Mass of Jackal wheels: https://github.com/jackal/jackal/blob/noetic-devel/jackal_description/urdf/jackal.urdf.xacro --> 
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:inertial_cylinder>
+  </link>
+
+  <!--  WHEEL LEFT FRONT LINK -->
+  <joint name="wheel_left_front_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="wheel_left_front_link"/>
+    <origin xyz="0.29 0.114 0" rpy="-${pi/2} 0 0"/>                                 <!-- Shift Wheel Frame/Link -->
+  </joint>
+
+  <link name="wheel_left_front_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.061" length="0.062"/>                                   <!-- Wheel Size -->
+      </geometry>
+      <material name="light_black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.061" length="0.062"/> 
+        <!-- <sphere radius="0.061"/> -->
+      </geometry>
+    </collision>
+    <xacro:inertial_cylinder mass="0.477" length="0.062" radius="0.061">            <!-- Mass of Jackal wheels: https://github.com/jackal/jackal/blob/noetic-devel/jackal_description/urdf/jackal.urdf.xacro --> 
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:inertial_cylinder>
+  </link>
+
+  <!--  WHEEL RIGHT FRONT LINK -->
+  <joint name="wheel_right_front_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="wheel_right_front_link"/>
+    <origin xyz="0.29 -0.114 0" rpy="-${pi/2} 0 0"/>                                <!-- Shift Wheel Frame/Link -->
+  </joint>
+
+  <link name="wheel_right_front_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.061" length="0.062"/>                                   <!-- Wheel Size -->
+      </geometry>
+      <material name="light_black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.061" length="0.062"/> 
+        <!-- <sphere radius="0.061"/> -->
+      </geometry>
+    </collision>
+    <xacro:inertial_cylinder mass="0.477" length="0.062" radius="0.061">             <!-- Mass of Jackal wheels: https://github.com/jackal/jackal/blob/noetic-devel/jackal_description/urdf/jackal.urdf.xacro --> 
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:inertial_cylinder>
+  </link>
+  
+  <!-- Specify Gazebo Color for Simulation (Only Evaluated in Sim Mode) -->
+  <!-- <gazebo reference="base_link">
+        <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="wheel_left_back_link">
+        <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="wheel_right_back_link">
+        <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="wheel_left_front_link">
+        <material>Gazebo/Grey</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+  </gazebo>
+  <gazebo reference="wheel_right_front_link">
+        <material>Gazebo/Grey</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+  </gazebo> -->
+
+</robot>
