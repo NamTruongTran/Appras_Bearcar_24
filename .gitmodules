@@ -1,12 +1,15 @@
 [submodule "isaac_ros_common"]
 	path = isaac_ros_common
 	url = https://github.com/NamTruongTran/isaac_ros_common.git
+	branch = appras_bearcar_2024
 [submodule "isaac_ros_jetson"]
 	path = isaac_ros_jetson
 	url = https://github.com/NamTruongTran/isaac_ros_jetson.git
+	branch = appras_bearcar_2024
 [submodule "isaac_ros_nitros"]
 	path = isaac_ros_nitros
 	url = https://github.com/NamTruongTran/isaac_ros_nitros.git
+	branch = appras_bearcar_2024
 [submodule "isaac_ros_visual_slam"]
 	path = isaac_ros_visual_slam
 	url = https://github.com/NamTruongTran/isaac_ros_visual_slam.git
@@ -14,9 +17,12 @@
 [submodule "realsense-ros"]
 	path = realsense-ros
 	url = https://github.com/NamTruongTran/realsense-ros.git
+	branch = appras_bearcar_2024
 [submodule "ros2_benchmark"]
 	path = ros2_benchmark
 	url = https://github.com/NamTruongTran/ros2_benchmark.git
+	branch = appras_bearcar_2024
 [submodule "isaac_ros_benchmark"]
 	path = isaac_ros_benchmark
 	url = https://github.com/NamTruongTran/isaac_ros_benchmark
+	branch = appras_bearcar_2024
