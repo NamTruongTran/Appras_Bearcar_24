@@ -1,3 +1,6 @@
 [submodule "isaac_ros_common"]
 	path = isaac_ros_common
 	url = https://github.com/NamTruongTran/isaac_ros_common.git
+[submodule "isaac_ros_jetson"]
+	path = isaac_ros_jetson
+	url = https://github.com/NamTruongTran/isaac_ros_jetson.git
