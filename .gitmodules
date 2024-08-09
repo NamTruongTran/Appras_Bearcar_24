@@ -17,3 +17,6 @@
 [submodule "ros2_benchmark"]
 	path = ros2_benchmark
 	url = https://github.com/NamTruongTran/ros2_benchmark.git
+[submodule "isaac_ros_benchmark"]
+	path = isaac_ros_benchmark
+	url = https://github.com/NamTruongTran/isaac_ros_benchmark
