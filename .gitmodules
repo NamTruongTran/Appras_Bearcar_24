@@ -11,3 +11,6 @@
 	path = isaac_ros_visual_slam
 	url = https://github.com/NamTruongTran/isaac_ros_visual_slam.git
 	branch = appras_bearcar_2024
+[submodule "realsense-ros"]
+	path = realsense-ros
+	url = https://github.com/NamTruongTran/realsense-ros.git
