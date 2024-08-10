@@ -12,38 +12,20 @@ The objective of this repository is to integrate the Isaac ROS Visual SLAM on th
 
 ## How to use ?
 
-### Docker-Environment
+### Isaac ROS Docker Environment
 
 This project based on the Isaac ROS Dev Docker image, which contains predefined dependencies and settings. 
 On top of the base image, we add our own layer in order to add additional packages.
-Additionally we added the command 
-
-<hr>
-
-# Usage
-
-## Start the camera node
-  
-  #### with ros2 run:
-    ros2 run realsense2_camera realsense2_camera_node
-    # or, with parameters, for example - temporal and spatial filters are enabled:
-    ros2 run realsense2_camera realsense2_camera_node --ros-args -p enable_color:=false -p spatial_filter.enable:=true -p temporal_filter.enable:=true
-  
-  #### with ros2 launch:
-    ros2 launch realsense2_camera rs_launch.py
-    ros2 launch realsense2_camera rs_launch.py depth_module.depth_profile:=1280x720x30 pointcloud.enable:=true
-
-<hr>
 
 The following table show different alias for the environment:
 
 
-| Alias                              | Programm Call            | Description                                                                        |
-|----------                          |----------       |----------                                                                          |
-| go                                 | run_dev       | random, staged, scenario, parametrized, dynamic_map_random, dynamic_map_staged     |
-|                                    |                 |                                                                         |
-|                                    |                 |                                                                         |
-|                                    |                 |                                                                         |
+| Alias                              | Programm Call | Description  |
+|----------                          |----------     |----------    |
+| go                                 | cd ${ISAAC_ROS_WS}/src/isaac_ros_common && \ ./scripts/run_dev.sh            | Launch the Isaac ROS Docker Container (specified in the .bashrc outside of the container)                                        |
+| sr                                 | source /workspaces/isaac_ros-dev/install/setup.bash                          | Source the workspace (workspace will be sourced automatically after start the container initially or attach a new container)     |
+| cb                                 | colcon build --symlink-install                                               | Build the workspace                                                                                                              |  
+| vslam_go                           | ros2 launch isaac_ros_visual_slam isaac_ros_visual_slam_realsense.launch.py  | Start the Isaac ROS Visual SLAM Node with Realsense node and the frame of Bearcar                                                |
 
 
 
