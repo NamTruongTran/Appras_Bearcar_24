@@ -22,11 +22,11 @@ The following table shows different alias for the environment:
 
 | Alias                              | Programm Call | Description  |
 |----------                          |----------     |----------    |
-| go                                 | cd ${ISAAC_ROS_WS}/src/isaac_ros_common && \ ./scripts/run_dev.sh            | Launch the Isaac ROS Docker Container (specified in the .bashrc outside of the container)                                        |
-| sr                                 | source /workspaces/isaac_ros-dev/install/setup.bash                          | Source the workspace (workspace will be sourced automatically after start the container initially or attach a new container)     |
-| cb                                 | colcon build --symlink-install                                               | Build the workspace                                                                                                              |  
-| vslam_go                           | ros2 launch isaac_ros_visual_slam isaac_ros_visual_slam_realsense.launch.py  | Start the Isaac ROS Visual SLAM Node with Realsense node and the corresponding frames for Bearcar                                |
-| keypoints                          | ros2 run keypoints_visualizer vslam_sim                                      | Show projected 3D points of the Pointcloud2 Topic onto the 2D image plane                                                        |
+| go                                 | cd ${ISAAC_ROS_WS}/src/isaac_ros_common && \ ./scripts/run_dev.sh            | Launch the Isaac ROS Docker Container (specified in the .bashrc outside of the container)                                           |
+| sr                                 | source /workspaces/isaac_ros-dev/install/setup.bash                          | Source the workspace (the workspace will be sourced automatically after initially starting the container or attaching a new one)    |
+| cb                                 | colcon build --symlink-install                                               | Build the workspace                                                                                                                 |  
+| vslam_go                           | ros2 launch isaac_ros_visual_slam isaac_ros_visual_slam_realsense.launch.py  | Start the Isaac ROS Visual SLAM Node with Realsense node and the corresponding frames for Bearcar                                   |
+| keypoints                          | ros2 run keypoints_visualizer vslam_sim                                      | Show projected 3D points of the Pointcloud2 Topic onto the 2D image plane                                                           |
 
 
 
