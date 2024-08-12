@@ -1,6 +1,6 @@
 # Appras_Bearcar_24
 
-The objective of this repository is to integrate the Isaac ROS Visual SLAM on the Bearcar.
+This repository is based on the [Arena-Rosnav](https://arena-rosnav.readthedocs.io/en/latest/) framework. The objective of this package is to integrate Isaac ROS Visual SLAM with the Bearcar while assessing its efficacy and robustness within the environment.
 
 ## Requirements
 
@@ -28,5 +28,13 @@ The following table shows different alias for the environment:
 | vslam_go                           | ros2 launch isaac_ros_visual_slam isaac_ros_visual_slam_realsense.launch.py  | Start the Isaac ROS Visual SLAM Node with Realsense node and the corresponding frames for Bearcar                                   |
 | keypoints                          | ros2 run keypoints_visualizer vslam_sim                                      | Show projected 3D points of the Pointcloud2 Topic onto the 2D image plane                                                           |
 
-
+## Additional Documentation:
+- First steps to set up ISAAC ROS on the Jetson Xavier AGX
+     - [Get-Started]([https://flatland-simulator.readthedocs.io/en/latest/](https://web.archive.org/web/20240226200225/https://nvidia-isaac-ros.github.io/getting_started/index.html))
+- Nvidia ISAAC ROS Nitros for acceleration of ROS nodes with type adaption and negotiation
+     - [ISAAC-ROS-Nitros](https://nvidia-isaac-ros.github.io/repositories_and_packages/isaac_ros_visual_slam/isaac_ros_visual_slam/index.html#quickstart)
+ - Nvidia Isaac ROS Visual SLAM Package enables odometry estimation with Visual Odometry 
+     - [ISAAC-ROS-Visual-SLAM](https://web.archive.org/web/20240413190927/https://nvidia-isaac-ros.github.io/repositories_and_packages/isaac_ros_nitros/index.html)
+- Nvidia Isaac ROS Visual SLAM with Realsense camera
+     - [ISAAC-ROS-Visual-SLAM-Realsense](https://web.archive.org/web/20240226195409/https://nvidia-isaac-ros.github.io/concepts/visual_slam/cuvslam/tutorial_realsense.html)
 
