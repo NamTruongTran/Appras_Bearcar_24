@@ -1,6 +1,6 @@
 # Appras_Bearcar_24
 
-This repository is based on the [Arena-Rosnav](https://arena-rosnav.readthedocs.io/en/latest/) framework. The objective of this package is to integrate Isaac ROS Visual SLAM with the Bearcar while assessing its efficacy and robustness within the environment.
+This repository is based on the [Issac-ROS](https://developer.nvidia.com/isaac/ros) framework. The objective of this package is to integrate Isaac ROS Visual SLAM with the Bearcar while assessing its efficacy and robustness within the environment.
 
 ## Requirements
 
