@@ -30,11 +30,11 @@ The following table shows different alias for the environment:
 
 ## Additional Documentation:
 - First steps to set up ISAAC ROS on the Jetson Xavier AGX
-     - [Get-Started]([https://flatland-simulator.readthedocs.io/en/latest/](https://web.archive.org/web/20240226200225/https://nvidia-isaac-ros.github.io/getting_started/index.html))
+     - [Get-Started](https://web.archive.org/web/20240226200225/https://nvidia-isaac-ros.github.io/getting_started/index.html)
 - Nvidia ISAAC ROS Nitros for acceleration of ROS nodes with type adaption and negotiation
-     - [ISAAC-ROS-Nitros](https://nvidia-isaac-ros.github.io/repositories_and_packages/isaac_ros_visual_slam/isaac_ros_visual_slam/index.html#quickstart)
+     - [ISAAC-ROS-Nitros](https://web.archive.org/web/20240413190927/https://nvidia-isaac-ros.github.io/repositories_and_packages/isaac_ros_nitros/index.html)
  - Nvidia Isaac ROS Visual SLAM Package enables odometry estimation with Visual Odometry 
-     - [ISAAC-ROS-Visual-SLAM](https://web.archive.org/web/20240413190927/https://nvidia-isaac-ros.github.io/repositories_and_packages/isaac_ros_nitros/index.html)
+     - [ISAAC-ROS-Visual-SLAM](https://nvidia-isaac-ros.github.io/repositories_and_packages/isaac_ros_visual_slam/isaac_ros_visual_slam/index.html#quickstart)
 - Nvidia Isaac ROS Visual SLAM with Realsense camera
      - [ISAAC-ROS-Visual-SLAM-Realsense](https://web.archive.org/web/20240226195409/https://nvidia-isaac-ros.github.io/concepts/visual_slam/cuvslam/tutorial_realsense.html)
 
