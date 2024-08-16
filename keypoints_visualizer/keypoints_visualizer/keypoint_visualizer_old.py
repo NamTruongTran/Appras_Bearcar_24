@@ -85,25 +85,32 @@ class PointCloudVisualizer(Node):
             return
 
         # Define intrinsic parameters 
-        ## the fx, fy should be = focal length*(imgshape[0 or 1]/2)/np.tan(FOV in radians/2)
-        fx = 1.6 * (self.image.shape[1]/2) / (np.tan(np.deg2rad(121.5)/2))  # Focal length in x (pixels)
-        fy = 1.6 * (self.image.shape[0]/2) / (np.tan(np.deg2rad(73.5)/2))   # Focal length in y (pixels)
-        
+        ##NOTES:1st mistake the fx, fy should be = focal length*(imgshape[0 or 1]/2)/np.tan(FOV in radians/2)
+        fx = 1.88 * (self.image.shape[1]/2) / (np.tan(1.51844/2))  # Focal length in x (pixels)
+        fy = 1.88 * (self.image.shape[0]/2) / (np.tan(1.01229/2))   # Focal length in y (pixels)
+        ##NOTES:the below is the incorrect fx, fy calculation and the origional values of fov and focal length provided by alex.
+        ##fx = 2.8 * (self.image.shape[1]/2) / (np.tan(2.120575/2))  # Focal length in x (pixels)
+        ##fy = 2.8 * (self.image.shape[0]/2) / (np.tan(1.282817/2))   # Focal length in y (pixels)
+        #fx = 2.8 * (self.image.shape[1]) / (121.5)  # Focal length in x (pixels)
+        #fy = 2.8 * (self.image.shape[0]) / (73.5)   # Focal length in y (pixels)
         cx = self.image.shape[1] / 2.0            # Principal point x (pixels)
         cy = self.image.shape[0] / 2.0            # Principal point y (pixels)
 
         self.get_logger().info(f'Intrinsic parameters: fx={fx}, fy={fy}, cx={cx}, cy={cy}')
         
         # Extract x, y, z coordinates
-        ## coordinates rotation: x is -y, y is -z, z is x.
+        ##NOTES:2nd mistake coordinates rotation: x is -y, y is -z, z is x.
         x, y, z = -1*self.points[:, 1], -1*self.points[:, 2], self.points[:, 0]
         distance = np.sqrt(x*x+y*y+z*z)
+        #print("POINTS-shape!!----",self.points.shape)
+        #print("POINTS-beginning!!----",self.points[:,:])
+        #print("distance-beginning!!----",distance)
         
         # Debugging: print some of the raw 3D points
         self.get_logger().info(f'Raw 3D points: {self.points[:5]}')
         
         # Avoid division by zero by setting a minimum value for z
-        ## clipping z will just remove half of the points, the correct way is to search for zeros and replace them with epsilon.
+        ##NOTES:3nd mistake clipping z will just remove half of the points, the correct way is to search for zeros and replace them with epsilon.
         z[z==0] =1e-3
         #z = np.clip(z, 1e-3, None)
         
@@ -148,10 +155,19 @@ class PointCloudVisualizer(Node):
             self.get_logger().error(f'CvBridge Error: {e}')
             return
 
+        # Create a named window that is resizable
+        cv2.namedWindow('Keypoints', cv2.WINDOW_NORMAL)
+
         # Resize window to 20cm x 20cm
         # Assuming a DPI of 96
         width = int(20 * 96 / 2.54)  # Convert cm to pixels
         height = width  # 20cm x 20cm, so width and height are the same
+    
+        cv2.resizeWindow('Keypoints', width, height)
+
+        # Optionally, display the image using OpenCV
+        cv2.imshow('Keypoints', self.image)
+        cv2.waitKey(1)
 
 def main(args=None):
     rclpy.init(args=args)
