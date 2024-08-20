@@ -10,25 +10,6 @@ from geometry_msgs.msg import TransformStamped
 import tf2_geometry_msgs
 # Import math Library
 import math 
-import subprocess
-import time
-import sys
-
-def run_static_transform_publisher():
-
-    static_transform_cmd = ['ros2', 'run', 'tf2_ros', 'static_transform_publisher', '0', '0', '0', '0', '0', '0', 'base_link', 'camera_link']
-    
-    try:
-        # Run static_transform_publisher in the background
-        subprocess.Popen(static_transform_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        # Wait a bit for the process to initialize
-        time.sleep(2)
-    except FileNotFoundError as e:
-        print(f"Error: {e}")
-        sys.exit(1)  # Exit the program with an error code
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-        sys.exit(1)  # Exit the program with an error code
 
 class PointCloudVisualizer(Node):
     def __init__(self):
@@ -174,7 +155,6 @@ class PointCloudVisualizer(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    run_static_transform_publisher()
     node = PointCloudVisualizer()
     rclpy.spin(node)
     node.destroy_node()
