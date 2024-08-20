@@ -15,6 +15,26 @@ This repository is based on the [Issac-ROS](https://developer.nvidia.com/isaac/r
 
 ## How to use ?
 
+### Initial Setup
+
+Create a workspaace and clone the repository
+
+```
+mkdir -p ~/workspaces/isaac_ros-dev/src && cd ~/workspaces/isaac_ros-dev/src
+git clone git@github.com:NamTruongTran/Appras_Bearcar_24.git
+```
+
+Add these lines to your bashrc:
+
+  - This is a alias for launching the container  
+```
+alias go="cd ~/workspaces/isaac_ros-dev/src/isaac_ros_common && ./scripts/run_dev.sh ~/workspaces/isaac_ros-dev"
+```
+  - This command sets an environment variable
+```
+export ISAAC_ROS_WS=~/workspaces/isaac_ros-dev/
+```
+
 ### Isaac ROS Docker Environment
 
 This project based on the Isaac ROS Dev Docker image, which contains predefined dependencies and settings. 
