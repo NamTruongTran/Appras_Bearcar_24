@@ -15,6 +15,17 @@ This repository is based on the [Issac-ROS](https://developer.nvidia.com/isaac/r
 
 ## How to use ?
 
+Befrore running any commands, add these lineS to your bashrc:
+
+  - This is a alias for launching the container  
+```
+$ alias go="cd ~/workspaces/isaac_ros-dev/src/isaac_ros_common && ./scripts/run_dev.sh ~/workspaces/isaac_ros-dev"
+```
+  - This command sets an environment variable
+```
+$ export ISAAC_ROS_WS=~/workspaces/isaac_ros-dev/
+```
+
 ### Isaac ROS Docker Environment
 
 This project based on the Isaac ROS Dev Docker image, which contains predefined dependencies and settings. 
