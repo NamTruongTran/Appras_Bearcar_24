@@ -3,7 +3,6 @@
 This repository is based on the [Issac-ROS](https://developer.nvidia.com/isaac/ros) framework. The objective of this package is to integrate Isaac ROS Visual SLAM on the Bearcar while assessing its efficacy and robustness of the algorithm within the environment.
 
 
-| :--------------------------------------------------------------: | :---------------------------------------------------------------------: | 
 | <img  src="./bearcar/gifs/frames.gif"> | <img  src="./bearcar/gifs/keypoints.gif"> | 
 | :--------------------------------------------------------------: | :---------------------------------------------------------------------: | 
 
