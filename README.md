@@ -5,6 +5,9 @@ This repository is based on the [Issac-ROS](https://developer.nvidia.com/isaac/r
 
 | <img  src="./bearcar/gifs/frames.gif"> | <img  src="./bearcar/gifs/keypoints.gif"> | 
 | :--------------------------------------------------------------: | :---------------------------------------------------------------------: | 
+![Frames GIF](./bearcar/gifs/frames.gif)
+![Frames GIF](./bearcar/gifs/keypoints.gif)
+
 
 ## Requirements
 
