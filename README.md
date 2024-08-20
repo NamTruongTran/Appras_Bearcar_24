@@ -51,6 +51,19 @@ The following table shows different alias for the environment:
 | vslam_go                           | ros2 launch isaac_ros_visual_slam isaac_ros_visual_slam_realsense.launch.py  | Start the Isaac ROS Visual SLAM Node with Realsense node and the corresponding frames for Bearcar                                   |
 | keypoints                          | ros2 run keypoints_visualizer vslam_sim                                      | Show projected 3D points of the Pointcloud2 Topic onto the 2D image plane                                                           |
 
+## Experimental Accuracy Results
+
+| Experiment                      | 1st Run    | 2nd Run    | 3rd Run    | Median Error |
+|---------------------------------|------------|------------|------------|--------------|
+| Whitewall                       | 46.007 %   | 41.639 %   | 50.180 %   | 34.456 %     |
+| Short Distance (slow)           | 2.485 %    | 1.671 %    | 1.945 %    | 2.034 %      |
+| Short Distance (fast)           | 2.606 %    | 2.848 %    | 2.111 %    | 2.521 %      |
+| Long Distance (slow)            | 2.501 %    | 2.477 %    | 1.603 %    | 2.193 %      |
+| Long Distance (fast)            | 2.687 %    | 2.806 %    | 2.260 %    | 2.338 %      |
+| Rotation                        | 0.050 %    | 0.372 %    | 3.266 %    | 1.229 %      |
+| Loop Closure (translation)      | 5.995 cm   | 4.338 cm   | 6.444 cm   | 5.592 cm     |
+| Loop Closure (rotation)         | 0.077 %    | 0.105 %    | 0.583 %    | 0.255 %      |
+
 ## Additional Documentation:
 - First steps to set up ISAAC ROS on the Jetson Xavier AGX
      - [Get-Started](https://web.archive.org/web/20240226200225/https://nvidia-isaac-ros.github.io/getting_started/index.html)
