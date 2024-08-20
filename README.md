@@ -20,7 +20,7 @@ This repository is based on the [Issac-ROS](https://developer.nvidia.com/isaac/r
 Create a workspaace and clone the repository
 
 ```
-mkdir -p ~/workspaces/isaac_ros-dev/src && cd ~/ros2_ws/src
+mkdir -p ~/workspaces/isaac_ros-dev/src && cd ~/workspaces/isaac_ros-dev/src
 git clone git@github.com:NamTruongTran/Appras_Bearcar_24.git
 ```
 
