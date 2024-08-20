@@ -24,7 +24,7 @@ mkdir -p ~/workspaces/isaac_ros-dev/src && cd ~/workspaces/isaac_ros-dev/src
 git clone git@github.com:NamTruongTran/Appras_Bearcar_24.git
 ```
 
-Add these lineS to your bashrc:
+Add these lines to your bashrc:
 
   - This is a alias for launching the container  
 ```
