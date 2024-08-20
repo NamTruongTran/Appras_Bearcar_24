@@ -19,11 +19,11 @@ Befrore running any commands, add these lineS to your bashrc:
 
   - This is a alias for launching the container  
 ```
-$ alias go="cd ~/workspaces/isaac_ros-dev/src/isaac_ros_common && ./scripts/run_dev.sh ~/workspaces/isaac_ros-dev"
+alias go="cd ~/workspaces/isaac_ros-dev/src/isaac_ros_common && ./scripts/run_dev.sh ~/workspaces/isaac_ros-dev"
 ```
   - This command sets an environment variable
 ```
-$ export ISAAC_ROS_WS=~/workspaces/isaac_ros-dev/
+export ISAAC_ROS_WS=~/workspaces/isaac_ros-dev/
 ```
 
 ### Isaac ROS Docker Environment
